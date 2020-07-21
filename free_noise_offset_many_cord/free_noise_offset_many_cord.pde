@@ -11,7 +11,7 @@ void setup(){
 }
 
 void draw(){
-  fill(255, 50);
+  fill(255, 50);//and filled line by this color
   rect(0, 0, width, height);
   if(mousePressed){
     PVector mouse = new PVector(mouseX, mouseY);

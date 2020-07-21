@@ -17,12 +17,14 @@ class Chain{
   
   void show(){
     if(nodes.size() > 0){
-      beginShape();
-      for(Node node : nodes){
-        float t = (noise(node.off+off)-0.5)*subR;
-        curveVertex(node.pos.x+node.normal.x*t, node.pos.y+node.normal.y*t);
+      for(float zoff=0; zoff < 1; zoff+=0.1){
+        beginShape();
+        for(Node node : nodes){
+          float t = (noise(node.off+off, zoff)-0.5)*subR;
+          curveVertex(node.pos.x+node.normal.x*t, node.pos.y+node.normal.y*t);
+        }
+        endShape();
       }
-      endShape();
       noStroke();
       fill(0);
       for(Node node : nodes){

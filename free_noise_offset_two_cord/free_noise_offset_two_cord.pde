@@ -5,14 +5,16 @@ void setup(){
   size(1000, 1000);
   //fullScreen();
   background(255);
-  strokeWeight(5);
+  strokeWeight(3);
   chain = new Chain(20, 500);
   
 }
 
 void draw(){
-  fill(255, 50);
-  rect(0, 0, width, height);
+  //fill(255, 50);
+  //rect(0, 0, width, height);
+  background(255);
+  noFill();
   if(mousePressed){
     PVector mouse = new PVector(mouseX, mouseY);
     if(prevMouse != null){
